@@ -1,0 +1,137 @@
+
+SQL*Plus: Release 12.1.0.1.0 Production on Fri Jun 9 08:33:53 2023
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Enter user-name: s22mca014@oracle
+Enter password:
+Last Successful login time: Mon Apr 24 2023 09:03:37 +05:30
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
+
+SQL> create table sailors (sid int not null primary key, sname, varchar(25), rating number(2), age number);
+create table sailors (sid int not null primary key, sname, varchar(25), rating number(2), age number)
+                                                           *
+ERROR at line 1:
+ORA-00904: : invalid identifier
+
+
+SQL> create table sailors (sid int not null primary key, sname varchar(25), rating number(2), age number);
+create table sailors (sid int not null primary key, sname varchar(25), rating number(2), age number)
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> select * from sailors
+  2  ;
+
+no rows selected
+
+SQL> select * from sailors;
+
+no rows selected
+
+SQL> desc sailors;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                       NOT NULL NUMBER
+ SNAME                                              VARCHAR2(25)
+ RATING                                             NUMBER(5)
+ AGE                                                NUMBER
+
+SQL> insert into sailors values(22,'DUSTIN',7,45);
+
+1 row created.
+
+SQL> insert into sailors values(29,'Brutus',1,33);
+
+1 row created.
+
+SQL> insert into sailors values(31,'Lubber',8,55);
+
+1 row created.
+
+SQL> insert into sailors values(32,'Andy',8,25);
+
+1 row created.
+
+SQL> insert into sailors values(58,'Rusty',10,35);
+
+1 row created.
+
+SQL> insert into sailors values(64,'Horatio',7,35);
+
+1 row created.
+
+SQL> insert into sailors values(71,'Zorba',10,16);
+
+1 row created.
+
+SQL> insert into sailors values(74,'Horatio',9,35);
+
+1 row created.
+
+SQL> insert into sailors values(85,'Art',3,26);
+
+1 row created.
+
+SQL> insert into sailors values(95,'Bob',3,64);
+
+1 row created.
+
+SQL> select * from sailors;
+
+       SID SNAME                         RATING        AGE
+---------- ------------------------- ---------- ----------
+        22 DUSTIN                             7         45
+        29 Brutus                             1         33
+        31 Lubber                             8         55
+        32 Andy                               8         25
+        58 Rusty                             10         35
+        64 Horatio                            7         35
+        71 Zorba                             10         16
+        74 Horatio                            9         35
+        85 Art                                3         26
+        95 Bob                                3         64
+
+10 rows selected.
+
+SQL> update sailors where sid =22 set sname="Dustin";
+update sailors where sid =22 set sname="Dustin"
+               *
+ERROR at line 1:
+ORA-00971: missing SET keyword
+
+
+SQL> update sailors set sname="Dustin" where sid =22;
+update sailors set sname="Dustin" where sid =22
+                         *
+ERROR at line 1:
+ORA-00904: "Dustin": invalid identifier
+
+
+SQL> update sailors set sname='Dustin' where sid =22;
+
+1 row updated.
+
+SQL> select * from sailors;
+
+       SID SNAME                         RATING        AGE
+---------- ------------------------- ---------- ----------
+        22 Dustin                             7         45
+        29 Brutus                             1         33
+        31 Lubber                             8         55
+        32 Andy                               8         25
+        58 Rusty                             10         35
+        64 Horatio                            7         35
+        71 Zorba                             10         16
+        74 Horatio                            9         35
+        85 Art                                3         26
+        95 Bob                                3         64
+
+10 rows selected.
+
+SQL>
