@@ -134,4 +134,9 @@ SQL> select * from sailors;
 
 10 rows selected.
 
+
+SQL> create table boats (Bid int not null primary key, bname varchar(25), color varchar(20));
+
+Table created.
+
 SQL>
