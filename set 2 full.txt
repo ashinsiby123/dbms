@@ -139,4 +139,30 @@ SQL> create table boats (Bid int not null primary key, bname varchar(25), color 
 
 Table created.
 
+
+SQL> insert into boats values(101,'Interlake','Blue');
+
+1 row created.
+
+SQL> insert into boats values(102,'Interlake','Red');
+
+1 row created.
+
+SQL> insert into boats values(103,'Clipper','Green');
+
+1 row created.
+
+SQL> insert into boats values(104,'Marine','Red');
+
+1 row created.
+
+SQL> select * from boats;
+
+       BID BNAME                     COLOR
+---------- ------------------------- --------------------
+       101 Interlake                 Blue
+       102 Interlake                 Red
+       103 Clipper                   Green
+       104 Marine                    Red
+
 SQL>
