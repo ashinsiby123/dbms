@@ -238,4 +238,22 @@ SQL> commit;
 
 Commit complete.
 
+
+SQL> select sname,age from sailors;
+
+SNAME                            AGE
+------------------------- ----------
+Dustin                            45
+Brutus                            33
+Lubber                            55
+Andy                              25
+Rusty                             35
+Horatio                           35
+Zorba                             16
+Horatio                           35
+Art                               26
+Bob                               64
+
+10 rows selected.
+
 SQL>
