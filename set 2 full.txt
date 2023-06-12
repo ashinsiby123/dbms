@@ -395,4 +395,39 @@ SQL> select s.rating,avg(s.age)as avg_age from SAILORS s group by s.rating havin
          3         45
         10       25.5
 
+SQL> CREATE TABLE SALESMAN (Salesman_id INT NOT NULL PRIMARY KEY, Name VARCHAR (20), City VARCHAR (20), Commission number);
+
+Table created.
+
+SQL> INSERT INTO SALESMAN VALUES(1000,'JOHN','BANGALORE',25);
+
+1 row created.
+
+SQL> INSERT INTO SALESMAN VALUES(2000,'RAVI','BANGALORE',20);
+
+1 row created.
+
+SQL> INSERT INTO SALESMAN VALUES(3000,'KUMAR','MYSORE',15);
+
+1 row created.
+
+SQL> INSERT INTO SALESMAN VALUES(4000,'SMITH','DELHI',30);
+
+1 row created.
+
+SQL> INSERT INTO SALESMAN VALUES(5000,'HARSHA','HYDRABAD',15);
+
+1 row created.
+
+SQL> select * from salesman;
+
+SALESMAN_ID NAME                 CITY                 COMMISSION
+----------- -------------------- -------------------- ----------
+       1000 JOHN                 BANGALORE                    25
+       2000 RAVI                 BANGALORE                    20
+       3000 KUMAR                MYSORE                       15
+       4000 SMITH                DELHI                        30
+       5000 HARSHA               HYDRABAD                     15
+
 SQL>
+
